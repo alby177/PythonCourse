@@ -1,0 +1,19 @@
+def SoloPrimo(listaNumeri):
+    """Questa funzione prende la lista che gli passo e cerca tutti i numeri non primi all'interno della funzione e li rimuove"""
+    i = 0
+    while i < len(listaNumeri):
+        nonPrimo = False
+        if (listaNumeri[i] < 2):
+            nonPrimo = True;
+        for n in range(2,listaNumeri[i],1):
+            if(listaNumeri[i]%n ==0):
+                nonPrimo = True
+                break
+        
+        if (nonPrimo == False):
+            i += 1  
+        else:
+            del listaNumeri[i]
+    return(listaNumeri)
+
+
